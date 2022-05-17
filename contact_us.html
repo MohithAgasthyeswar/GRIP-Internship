@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		
+		<title>
+			Contact us
+		</title>
+		<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+		<style>
+			body
+			{
+				background-image:url(bg.jpg);
+				background-attachment: fixed;
+				background-size: cover;
+				background-repeat:no-repeat;
+			}
+			#main
+			{
+				margin-left:10%;
+				margin-right:10%;
+			}
+			#content
+			{
+				background-color:black;
+				height: 700px;
+				opacity:0.7;
+				color:white;
+				font-size:19px;
+				margin-top:100px;
+			}
+			#navbar
+			{
+			
+				background-color:#fdf6e7;
+				font-weight:bold;
+				color:white;
+				border-top-left-radius:25px;
+				border-top-right-radius:25px;
+				position:fixed;
+				z-index:1;
+				top:0;
+				width:79.15%;
+				font-size:25px;
+                text-align:right;
+				height:100px;
+				
+			}
+			nav a
+			{
+				display:inline-block;
+				text-align: center;
+				margin:3% 2% 3% 2%;
+				color:#3c2005;	
+				text-decoration:none;
+			}
+			a span:hover{
+				background-color:#3c2005;
+				color:white;
+				border-radius:8px;
+				font-weight:bold;
+				text-transform:uppercase;
+			}
+			#footbar
+			{
+				background-color:#321414;
+				border-bottom-left-radius:25px;
+				border-bottom-right-radius:25px;
+				text-align:center;
+				font-size:15px;
+				color:white;
+				opacity:0.9;
+			}
+			#footbar a
+			{
+				font-size:17px;
+			}
+			#name
+			{
+				float:left;
+				margin-left:2%;
+				font-family: Georgia;
+				font-size:35px;
+				color:#3c2005;
+				font-weight:normal;
+				text-shadow: 0 0 3px #717874;
+			}
+			.brand
+			{
+				color:#3c2005;
+				font-weight:bold;
+				font-family:papyrus;
+			}
+			.big
+			{
+				font-size:35px;
+			}
+			.bullet
+			{
+				list-style-image: url('bullet.png');
+			}
+			.grade
+			{
+				 background: linear-gradient(to right, #f32170, #ff6b08);
+				-webkit-text-fill-color: transparent;
+				-webkit-background-clip: text;
+			}
+			.select
+			{
+				font-weight:bold;
+				color:white;
+				font-family: 'Kaisei Tokumin', serif;
+				font-size:30px;
+				opacity:1;
+			}
+			#over
+			{
+				padding-top:20px;
+				padding-left:80px;
+			}
+			#ddlist
+			{
+				background-color:#a68107;
+				color:white;
+				border-radius:15px;
+				font-weight:bold;
+				height:30px;
+			}
+            .navigate .icon{
+                display:none;
+            }
+            @media screen and (min-width: 950px) and (max-width:1170px){
+                .navigate a:not(:first-child){
+                    display: none;
+                  }
+                .navigate a.icon {
+                    float:right;
+                    display: block;
+                }
+                #navbar
+                {
+                    height:170px;
+                }
+                #content
+                {
+                    height:1100px;
+                    margin-top:170px;
+                }
+				#content p
+				{
+					font-size:16px;
+				}
+				#over
+				{
+					padding-top:20px;
+					padding-left:30px;
+				}
+                #footbar{
+                    font-size:10px;
+                }
+				#footbar a{
+                    font-size:12px;
+                }
+                #name
+                {
+                    float:left;
+                    margin-left:12%;
+                    font-family: 'Lobster', cursive;
+                    font-size:25px;
+                    color:orangered;
+                    font-weight:normal;
+                    text-decoration:underline;
+                    text-decoration-color:#430370;
+                    text-shadow: 0 0 3px #717874;
+                }
+            }
+            @media screen and (min-width: 950px) and (max-width:1170px){
+                .navigate.responsive {position: relative;}
+                .navigate.responsive .icon {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    display:none;
+                }
+                .navigate.responsive a {
+                    float: none;
+                    display: block;
+                    text-align: right;
+                }
+            }
+            @media screen and (min-width: 800px) and (max-width:949px){
+                .navigate a:not(:first-child){
+                    display: none;
+                  }
+                .navigate a.icon {
+                    float:right;
+                    display: block;
+                }
+                #navbar
+                {
+                    height:170px;
+                }
+                #content
+                {
+                    height:1050px;
+                    margin-top:170px;
+                }
+				#content p
+				{
+					font-size:13px;
+				}
+				#over
+				{
+					padding-top:20px;
+					padding-left:20px;
+				}
+                #footbar{
+                    font-size:8px;
+                }
+				#footbar a{
+                    font-size:10px;
+                }
+                #name
+                {
+                    float:left;
+                    margin-left:12%;
+                    font-family: 'Lobster', cursive;
+                    font-size:25px;
+                    color:orangered;
+                    font-weight:normal;
+                    text-decoration:underline;
+                    text-decoration-color:#430370;
+                    text-shadow: 0 0 3px #717874;
+                }
+            }
+            @media screen and (min-width: 800px) and (max-width:949px){
+                .navigate.responsive {position: relative;}
+                .navigate.responsive .icon {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    display:none;
+                }
+                .navigate.responsive a {
+                    float: none;
+                    display: block;
+                    text-align: right;
+                }
+            }
+			 @media screen and (min-width: 651px) and (max-width:799px){
+                .navigate a:not(:first-child){
+                    display: none;
+                  }
+                .navigate a.icon {
+                    float:right;
+                    display: block;
+                }
+                #navbar
+                {
+                    height:170px;
+                }
+                #content
+                {
+                    height:1050px;
+                    margin-top:170px;
+                }
+				#content p
+				{
+					font-size:11px
+				}
+				#over
+				{
+					padding-top:20px;
+					padding-left:10px;
+				}
+                #footbar{
+                    font-size:8px;
+                }
+				#footbar a{
+                    font-size:10px;
+                }
+                #name
+                {
+                    float:left;
+                    margin-left:12%;
+                    font-family: 'Lobster', cursive;
+                    font-size:25px;
+                    color:orangered;
+                    font-weight:normal;
+                    text-decoration:underline;
+                    text-decoration-color:#430370;
+                    text-shadow: 0 0 3px #717874;
+                }
+            }
+            @media screen and (min-width: 651px) and (max-width:799px){
+                .navigate.responsive {position: relative;}
+                .navigate.responsive .icon {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    display:none;
+                }
+                .navigate.responsive a {
+                    float: none;
+                    display: block;
+                    text-align: right;
+                }
+            }
+			@media screen and (min-width: 400px) and (max-width:650px){
+                .navigate a:not(:first-child){
+                    display: none;
+                  }
+                .navigate a.icon {
+                    float:right;
+                    display: block;
+                }
+                #navbar
+                {
+                    height:150px;
+                }
+                #content
+                {
+                    height:1000px;
+                    margin-top:150px;
+                }
+				#content p
+				{
+					font-size:10px
+				}
+				#over
+				{
+					padding-top:20px;
+					padding-left:0px;
+				}
+                #footbar{
+                    font-size:7px;
+                }
+				#footbar a{
+                    font-size:9px;
+                }
+                #name
+                {
+                    float:left;
+                    margin-left:12%;
+                    font-family: 'Lobster', cursive;
+                    font-size:25px;
+                    color:orangered;
+                    font-weight:normal;
+                    text-decoration:underline;
+                    text-decoration-color:#430370;
+                    text-shadow: 0 0 3px #717874;
+                }
+            }
+            @media screen and (min-width: 400px) and (max-width:650px){
+                .navigate.responsive {position: relative;}
+                .navigate.responsive .icon {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    display:none;
+                }
+                .navigate.responsive a {
+                    float: none;
+                    display: block;
+                    text-align: right;
+                }
+            }
+		</style>
+        </head>
+	<body>
+	<div id="main">
+			<div class="navigate" id="navbar">
+				<nav>
+					<img src="bstm.png" style="float:left;width:90px;height:90px">
+					<p id="name" style="font-size:35px;">Bank of <span class="brand">SPARKS</span></p><a href="index.html"><span>Home</span></a>
+					<a href="about.html"><span>About</span></a>
+					<a href="contact_us.html"><span>Contact us</span></a>
+                    <a href="javascript:void(0);" style="font-size:20px;" class="icon" onclick="myFunction()">&#9776;</a>
+				</nav>
+			</div>
+            <script>
+            function myFunction() {
+              var x = document.getElementById("navbar");
+              if (x.className === "navigate") {
+                x.className += " responsive";
+              } else {
+                x.className = "navigate";
+              }
+            }
+            </script>
+			<div id="content">
+				<div >
+					<h1 style="color:#fdf6e7;margin-left:10px;font-family: 'Anton', sans-serif;">Contact Us</h1>
+					<p style="padding-left:10px">
+						The Bank of SPARKS has offices at 31 locations.<br>
+						<center>
+						<div class="map" style="margin-right:10px;background-image: url(&quot;https://www.rbi.org.in/images/offices.jpg&quot;); background-size: 430px 470px; position: relative; width: 430px; height: 470px; background-repeat: no-repeat; margin-left: 10px;"><canvas style="width: 430px; height: 470px; position: absolute; left: 0px; top: 0px; padding: 0px; border: 0px; opacity: 1;" height="470" width="430"></canvas><img class="map maphilighted" src="/images/offices.jpg" usemap="#Map" style="opacity: 0; position: absolute; left: 0px; top: 0px; padding: 0px; border: 0px;"></div>
+						</center>
+					</p>
+					
+				</div>
+				
+			</div>
+			<div id="footbar">
+			Bank of Sparks .<br>
+
+	Phone : 9874563210  |   |  for any queries email to::  <a href="mailto:bankofsparks.com" style="color:yellow;font-weight:bold;"> bankofsparks@gmail.com</a>
+				<p style="text-align:center"><a href="bstm.png"><img src="bstm.png" style="width:120px;height:120px"></a></p>
+			</div>
+		</div>
+	</body>
+</html>

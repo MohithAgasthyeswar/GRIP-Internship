@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			BankSecureTransactionsModel
+		</title>
+		<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&display=swap" rel="stylesheet">
+		<style>
+			body
+			{
+				background-image:url(bg.jpg);
+				background-attachment: fixed;
+				background-size: cover;
+				background-repeat:no-repeat;
+			}
+			#main
+			{
+				margin-left:10%;
+				margin-right:10%;
+			}
+			#content
+			{
+				background-color:black;
+				height: 900px;
+				opacity:0.7;
+				color:white;
+				font-size:19px;
+				margin-top:100px;
+			}
+			#navbar
+			{
+			
+				background-color:#fdf6e7;
+				font-weight:bold;
+				color:white;
+				border-top-left-radius:25px;
+				border-top-right-radius:25px;
+				position:fixed;
+				z-index:1;
+				top:0;
+				width:79.15%;
+				font-size:25px;
+                text-align:right;
+				height:100px;
+				
+			}
+			nav a
+			{
+				display:inline-block;
+				text-align: center;
+				margin:3% 2% 3% 2%;
+				color:#3c2005;	
+				text-decoration:none;
+			}
+			a span:hover{
+				background-color:#3c2005;
+				color:white;
+				border-radius:8px;
+				font-weight:bold;
+				text-transform:uppercase;
+			}
+			#footbar
+			{
+				background-color:#321414;
+				border-bottom-left-radius:25px;
+				border-bottom-right-radius:25px;
+				text-align:center;
+				font-size:15px;
+				color:white;
+				opacity:0.9;
+			}
+			#footbar a
+			{
+				font-size:17px;
+			}
+			#name
+			{
+				float:left;
+				margin-left:2%;
+				font-family: Georgia;
+				font-size:35px;
+				color:#3c2005;
+				font-weight:normal;
+				text-shadow: 0 0 3px #717874;
+			}
+			.brand
+			{
+				color:#3c2005;
+				font-weight:bold;
+				font-family:papyrus;
+			}
+			.big
+			{
+				font-size:35px;
+			}
+			.bullet
+			{
+				list-style-image: url('bullet.png');
+			}
+			.grade
+			{
+				 background: linear-gradient(to right, #f32170, #ff6b08);
+				-webkit-text-fill-color: transparent;
+				-webkit-background-clip: text;
+			}
+			.select
+			{
+				font-weight:bold;
+				color:white;
+				font-family: 'Kaisei Tokumin', serif;
+				font-size:30px;
+				opacity:1;
+			}
+			#over
+			{
+				padding-top:20px;
+				padding-left:80px;
+			}
+			#ddlist
+			{
+				background-color:#a68107;
+				color:white;
+				border-radius:15px;
+				font-weight:bold;
+				height:30px;
+			}
+            .navigate .icon{
+                display:none;
+            }
+            @media screen and (min-width: 950px) and (max-width:1170px){
+                .navigate a:not(:first-child){
+                    display: none;
+                  }
+                .navigate a.icon {
+                    float:right;
+                    display: block;
+                }
+                #navbar
+                {
+                    height:170px;
+                }
+                #content
+                {
+                    height:1100px;
+                    margin-top:170px;
+                }
+				#content p
+				{
+					font-size:16px;
+				}
+				#over
+				{
+					padding-top:20px;
+					padding-left:30px;
+				}
+                #footbar{
+                    font-size:10px;
+                }
+				#footbar a{
+                    font-size:12px;
+                }
+                #name
+                {
+                    float:left;
+                    margin-left:12%;
+                    font-family: 'Lobster', cursive;
+                    font-size:25px;
+                    color:orangered;
+                    font-weight:normal;
+                    text-decoration:underline;
+                    text-decoration-color:#430370;
+                    text-shadow: 0 0 3px #717874;
+                }
+            }
+            @media screen and (min-width: 950px) and (max-width:1170px){
+                .navigate.responsive {position: relative;}
+                .navigate.responsive .icon {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    display:none;
+                }
+                .navigate.responsive a {
+                    float: none;
+                    display: block;
+                    text-align: right;
+                }
+            }
+            @media screen and (min-width: 800px) and (max-width:949px){
+                .navigate a:not(:first-child){
+                    display: none;
+                  }
+                .navigate a.icon {
+                    float:right;
+                    display: block;
+                }
+                #navbar
+                {
+                    height:170px;
+                }
+                #content
+                {
+                    height:1050px;
+                    margin-top:170px;
+                }
+				#content p
+				{
+					font-size:13px;
+				}
+				#over
+				{
+					padding-top:20px;
+					padding-left:20px;
+				}
+                #footbar{
+                    font-size:8px;
+                }
+				#footbar a{
+                    font-size:10px;
+                }
+                #name
+                {
+                    float:left;
+                    margin-left:12%;
+                    font-family: 'Lobster', cursive;
+                    font-size:25px;
+                    color:orangered;
+                    font-weight:normal;
+                    text-decoration:underline;
+                    text-decoration-color:#430370;
+                    text-shadow: 0 0 3px #717874;
+                }
+            }
+            @media screen and (min-width: 800px) and (max-width:949px){
+                .navigate.responsive {position: relative;}
+                .navigate.responsive .icon {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    display:none;
+                }
+                .navigate.responsive a {
+                    float: none;
+                    display: block;
+                    text-align: right;
+                }
+            }
+			 @media screen and (min-width: 651px) and (max-width:799px){
+                .navigate a:not(:first-child){
+                    display: none;
+                  }
+                .navigate a.icon {
+                    float:right;
+                    display: block;
+                }
+                #navbar
+                {
+                    height:170px;
+                }
+                #content
+                {
+                    height:1050px;
+                    margin-top:170px;
+                }
+				#content p
+				{
+					font-size:11px
+				}
+				#over
+				{
+					padding-top:20px;
+					padding-left:10px;
+				}
+                #footbar{
+                    font-size:8px;
+                }
+				#footbar a{
+                    font-size:10px;
+                }
+                #name
+                {
+                    float:left;
+                    margin-left:12%;
+                    font-family: 'Lobster', cursive;
+                    font-size:25px;
+                    color:orangered;
+                    font-weight:normal;
+                    text-decoration:underline;
+                    text-decoration-color:#430370;
+                    text-shadow: 0 0 3px #717874;
+                }
+            }
+            @media screen and (min-width: 651px) and (max-width:799px){
+                .navigate.responsive {position: relative;}
+                .navigate.responsive .icon {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    display:none;
+                }
+                .navigate.responsive a {
+                    float: none;
+                    display: block;
+                    text-align: right;
+                }
+            }
+			@media screen and (min-width: 400px) and (max-width:650px){
+                .navigate a:not(:first-child){
+                    display: none;
+                  }
+                .navigate a.icon {
+                    float:right;
+                    display: block;
+                }
+                #navbar
+                {
+                    height:150px;
+                }
+                #content
+                {
+                    height:1000px;
+                    margin-top:150px;
+                }
+				#content p
+				{
+					font-size:10px
+				}
+				#over
+				{
+					padding-top:20px;
+					padding-left:0px;
+				}
+                #footbar{
+                    font-size:7px;
+                }
+				#footbar a{
+                    font-size:9px;
+                }
+                #name
+                {
+                    float:left;
+                    margin-left:12%;
+                    font-family: 'Lobster', cursive;
+                    font-size:25px;
+                    color:orangered;
+                    font-weight:normal;
+                    text-decoration:underline;
+                    text-decoration-color:#430370;
+                    text-shadow: 0 0 3px #717874;
+                }
+            }
+            @media screen and (min-width: 400px) and (max-width:650px){
+                .navigate.responsive {position: relative;}
+                .navigate.responsive .icon {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    display:none;
+                }
+                .navigate.responsive a {
+                    float: none;
+                    display: block;
+                    text-align: right;
+                }
+            }
+		</style>
+        </head>
+	<body>
+	<div id="main">
+			<div class="navigate" id="navbar">
+				<nav>
+					<img src="bstm.png" style="float:left;width:90px;height:90px">
+					<p id="name" style="font-size:35px;">Bank of <span class="brand">SPARKS</span></p>
+					<a href="index.html"><span>Home</span></a>
+					<a href="about.html"><span>About</span></a>
+					<a href="contact_us.html"><span>Contact us</span></a>
+                    <a href="javascript:void(0);" style="font-size:20px;" class="icon" onclick="myFunction()">&#9776;</a>
+				</nav>
+			</div>
+            <script>
+            function myFunction() {
+              var x = document.getElementById("navbar");
+              if (x.className === "navigate") {
+                x.className += " responsive";
+              } else {
+                x.className = "navigate";
+              }
+            }
+            </script>
+			
+			<div id="content">
+				<p> <center><span class="big">W</span>elcome to Bank of SPARKS,In this bank we can perform transactions without any login details.</center>
+				<center>First view all the available customers by clicking button "view customers" and select sender and receiver and enter their names in below text box without typo error,then enter amount which is transacted in between them.
+				After entering all the values if the conditions satisfied ,Transactions will be successful</center>
+				</p>
+				</p>
+				<br>
+				<center>
+						<form method=post>
+							<input type=submit  style="background-color:#fdf6e7;font-weight:bold;font-size:18px;" value ="view customers" name="btn_click">
+						</form>
+						<p id="details">
+							
+							<?php
+								function disp()
+								{
+									$host="localhost";
+									$username="id18781517_war";
+									$password="Mohith@12345";
+									$dbname="id18781517_bankingdb";
+
+									$conn=mysqli_connect($host,$username,$password,$dbname);
+									if(mysqli_connect_errno())
+										echo "Connection could not established...".mysqli_connect_error();
+									else
+										$query="select * from customers";
+										$result=mysqli_query($conn,$query);
+										echo "<br>";
+										echo "<table style='border-radius:10px;'>";
+										echo "<tr style='color:#fdf6e7;font-size:23px;font-weight: bold;font-family:Garamond;background-color:#321414;'><td>Name</td><td>Email</td><td>Balance</td></tr>";
+										foreach($result as $row)
+										{
+											echo "<tr style='color:#321414;font-size:23px;font-weight: normal;font-family:Garamond;background-color:#fdf6e7;'>";
+											echo "<td >$row[name]</td><td>$row[email]</td><td>$row[curr_bal]</td>";
+											echo "</tr>";
+										}
+										echo "</table>";
+										echo "<br>";
+										echo '<form method="post">
+											<label style="color:azure;font-size:20px;" for=sender>Enter Sender:</label>
+											<input  type=text id="s" name=sender placeholder="sender name match exactly"/>&nbsp;&nbsp;
+											<label style="color:azure;font-size:20px;" for=sender>Enter Receiver:</label>
+											<input name=receiver type=text  id="r" placeholder="Receiver name match exactly"/><br/><br/>
+											<label style="color:azure;font-size:20px;" for=sender>Enter Money to Transfer:</label>
+											<input name=amount type=text  placeholder="Please enter Money"/><br/><br/>
+											<input type=submit style="background-color:#fdf6e7;font-size:16px;font-weight:bold" name=btn value="Send"/>
+										</form>';
+								}
+								if(isset($_POST['btn_click'])){
+									
+										
+
+										disp();
+										
+										
+								}
+								
+							?>	
+						</p>
+						
+						<?php
+						if(isset($_POST['btn'])){
+						   $host="localhost";
+										$username="id18781517_war";
+										$password="Mohith@12345";
+										$dbname="id18781517_bankingdb";
+
+										$conn=mysqli_connect($host,$username,$password,$dbname);
+										if(mysqli_connect_errno())
+											echo "Connection could not established...".mysqli_connect_error();
+										else
+											
+											$sender=$_POST['sender'];
+											
+											
+											
+											$query="select * from customers where name='$sender'";
+											$result=mysqli_query($conn,$query);
+											foreach($result as $row)
+											{
+												$bal=$row[curr_bal];
+												
+											}
+											if (mysqli_num_rows($result) > 0)
+											{
+												$money=$_POST['amount'];
+												
+												if($bal>=$money)
+												{
+													$receiver=$_POST['receiver'];
+													$query="select * from customers where name='$receiver'";
+													$result=mysqli_query($conn,$query);
+													foreach($result as $row)
+													{
+														$bal1=$row[curr_bal];
+														
+													}
+													if (mysqli_num_rows($result) > 0)
+													{
+													
+														if($sender==$receiver){
+															echo "<h3>After transaction the details are</h3>";
+															disp();
+														}
+														else{
+															$updatedmoney=$bal-$money;
+														
+															$query="update customers SET curr_bal='$updatedmoney' where name='$sender'";
+															$result=mysqli_query($conn,$query);
+															
+															
+															$updatedmoney1=$bal1+$money;
+															
+															$query="update customers SET curr_bal='$updatedmoney1' where name='$receiver'";
+															$result=mysqli_query($conn,$query);
+															
+															echo "<h3>After transaction the details are</h3>";
+															disp();
+															echo '<b>Transaction Details:</b><br><b>Before:</b><br><b>sender balance:</b>'.$bal.'<br><b>receiver balance:</b>'.$bal1.'<br><b>After:</b><br>
+															<b>sender balance:</b>'.$updatedmoney.'<br><b>receiver balance:</b>'.$updatedmoney1;
+														}
+													}
+													else{
+														echo '<script>alert("Receiver Details not found")</script>';
+														disp();
+													}
+												}
+												else{
+													echo '<script>alert("Insufficient funds from Sender Side to initiate transactions")</script>';
+													disp();
+												}
+													
+											}
+											else{
+												echo '<script>alert("Sender details not found")</script>';
+												disp();
+											}
+						}
+					?>
+					</center>
+			</div>
+			
+			<div id="footbar">
+			Bank of Sparks .<br>
+
+	Phone : 9874563210  |   |  for any queries email to::  <a href="mailto:bankofsparks.com" style="color:yellow;font-weight:bold;"> bankofsparks@gmail.com</a>
+				<p style="text-align:center"><a href="bstm.png"><img src="bstm.png" style="width:120px;height:120px"></a></p>
+			</div>
+		</div>
+	</body>
+</html>
