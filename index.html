@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>
-			BankSecureTransactionsModel
+			Bank of Sparks
 		</title>
 		<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&display=swap" rel="stylesheet">
@@ -22,7 +22,7 @@
 			#content
 			{
 				background-color:black;
-				height: 900px;
+				height: 1400px;
 				opacity:0.7;
 				color:white;
 				font-size:19px;
@@ -93,37 +93,6 @@
 			.big
 			{
 				font-size:35px;
-			}
-			.bullet
-			{
-				list-style-image: url('bullet.png');
-			}
-			.grade
-			{
-				 background: linear-gradient(to right, #f32170, #ff6b08);
-				-webkit-text-fill-color: transparent;
-				-webkit-background-clip: text;
-			}
-			.select
-			{
-				font-weight:bold;
-				color:white;
-				font-family: 'Kaisei Tokumin', serif;
-				font-size:30px;
-				opacity:1;
-			}
-			#over
-			{
-				padding-top:20px;
-				padding-left:80px;
-			}
-			#ddlist
-			{
-				background-color:#a68107;
-				color:white;
-				border-radius:15px;
-				font-weight:bold;
-				height:30px;
 			}
             .navigate .icon{
                 display:none;
@@ -417,7 +386,7 @@
 										$query="select * from customers";
 										$result=mysqli_query($conn,$query);
 										echo "<br>";
-										echo "<table style='border-radius:10px;'>";
+										echo "<table border='1' cellspacing='0' cellpadding='22px'>";
 										echo "<tr style='color:#fdf6e7;font-size:23px;font-weight: bold;font-family:Garamond;background-color:#321414;'><td>Name</td><td>Email</td><td>Balance</td></tr>";
 										foreach($result as $row)
 										{
@@ -437,10 +406,36 @@
 											<input type=submit style="background-color:#fdf6e7;font-size:16px;font-weight:bold" name=btn value="Send"/>
 										</form>';
 								}
+								function dispTransactions(){
+									$host="localhost";
+									$username="id18781517_war";
+									$password="Mohith@12345";
+									$dbname="id18781517_bankingdb";
+
+									$conn=mysqli_connect($host,$username,$password,$dbname);
+									if(mysqli_connect_errno())
+										echo "Connection could not established...".mysqli_connect_error();
+									else
+										$query="select * from transactions";
+										$result=mysqli_query($conn,$query);
+										echo "<br>";
+										echo "<table border='1' cellspacing='0' cellpadding=22px>";
+										echo '<tr style="color:#fdf6e7;font-size:23px;font-weight: bold;font-family:Garamond;background-color:#321414;"><th class=tth>Sender Name</th><th class=tth>Receiver Name</th><th class=tth>Amount Transactioned</th><th class=tth>Date&Time</th>';
+										foreach($result as $row)
+										{
+											echo "<tr style='color:#321414;font-size:23px;font-weight: bold;font-family:Garamond;background-color:#fdf6e7;'>";
+											echo "<td class=ttd>$row[sender_name]</td><td class=ttd>$row[receiver_name]</td><td class=ttd>$row[amount_transactioned]</td><td class=ttd>$row[date_time]</td>";
+											echo "</tr>";
+										}
+										echo "</table><br>";
+								
+								}
+								if(isset($_POST['std'])){
+							
+									dispTransactions();
+								}
 								if(isset($_POST['btn_click'])){
 									
-										
-
 										disp();
 										
 										
@@ -504,11 +499,18 @@
 															
 															$query="update customers SET curr_bal='$updatedmoney1' where name='$receiver'";
 															$result=mysqli_query($conn,$query);
+															date_default_timezone_set("Asia/Calcutta");
+															$dt = date('Y-m-d H:i:s');
 															
+															$tquery = "INSERT INTO transactions(`sender_name`, `receiver_name`, `amount_transactioned`, `date_time`) VALUES ('$sender','$receiver','$money','$dt')";
+															$tresult = mysqli_query($conn,$tquery);
 															echo "<h3>After transaction the details are</h3>";
 															disp();
-															echo '<b>Transaction Details:</b><br><b>Before:</b><br><b>sender balance:</b>'.$bal.'<br><b>receiver balance:</b>'.$bal1.'<br><b>After:</b><br>
-															<b>sender balance:</b>'.$updatedmoney.'<br><b>receiver balance:</b>'.$updatedmoney1;
+															echo '<br><br><form method="post">
+													
+																<input type=submit style="background-color:#fdf6e7;font-style:bold;font-size:20px;border-radius:40px;" name=std value="Transaction History"/>
+
+															</form><br><br>';
 														}
 													}
 													else{
